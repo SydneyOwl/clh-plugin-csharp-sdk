@@ -1,0 +1,66 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "NuGet package version (example: 1.2.3). Leave empty to use the tag name without 'v'."
+        required: false
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      PROJECT_PATH: src/ClhPluginSdk/ClhPluginSdk.csproj
+      OUTPUT_DIR: artifacts
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Resolve package version
+        id: version
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            VERSION="${{ github.event.inputs.version }}"
+          elif [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          else
+            echo "Version is required for manual runs not triggered by a tag."
+            exit 1
+          fi
+
+          echo "value=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "PACKAGE_VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Restore
+        run: dotnet restore "$PROJECT_PATH"
+
+      - name: Build
+        run: dotnet build "$PROJECT_PATH" -c Release --no-restore
+
+      - name: Pack
+        run: >
+          dotnet pack "$PROJECT_PATH" -c Release --no-build -o "$OUTPUT_DIR"
+          /p:PackageVersion="$PACKAGE_VERSION"
+          /p:ContinuousIntegrationBuild=true
+          /p:IncludeSymbols=true
+          /p:SymbolPackageFormat=snupkg
+
+      - name: Publish package
+        run: dotnet nuget push "$OUTPUT_DIR/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
+
+      - name: Publish symbols
+        run: dotnet nuget push "$OUTPUT_DIR/*.snupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source "https://api.nuget.org/v3/index.json" --skip-duplicate
