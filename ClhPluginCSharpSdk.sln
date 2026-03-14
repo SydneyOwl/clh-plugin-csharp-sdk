@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClhPluginSdk", "src\ClhPlug
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicDemo", "examples\BasicDemo\BasicDemo.csproj", "{73578778-3ADD-4039-AC60-0A3BB11FEC21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaCapabilityDemo", "examples\AvaloniaCapabilityDemo\AvaloniaCapabilityDemo.csproj", "{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,24 +33,24 @@ Global
 		{1AE14024-27B3-4C60-AB9B-2CC68AFA6D86}.Release|x64.Build.0 = Release|Any CPU
 		{1AE14024-27B3-4C60-AB9B-2CC68AFA6D86}.Release|x86.ActiveCfg = Release|Any CPU
 		{1AE14024-27B3-4C60-AB9B-2CC68AFA6D86}.Release|x86.Build.0 = Release|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Debug|x64.Build.0 = Debug|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Debug|x86.Build.0 = Debug|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Release|x64.ActiveCfg = Release|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Release|x64.Build.0 = Release|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Release|x86.ActiveCfg = Release|Any CPU
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21}.Release|x86.Build.0 = Release|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Debug|x64.Build.0 = Debug|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Debug|x86.Build.0 = Debug|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Release|x64.ActiveCfg = Release|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Release|x64.Build.0 = Release|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Release|x86.ActiveCfg = Release|Any CPU
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1AE14024-27B3-4C60-AB9B-2CC68AFA6D86} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{73578778-3ADD-4039-AC60-0A3BB11FEC21} = {B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}
+		{4C86AE83-B13A-45FF-9E70-C79DF6FABC25} = {B36A84DF-456D-A817-6EDD-3EC3E7F6E11F}
 	EndGlobalSection
 EndGlobal

@@ -5,7 +5,7 @@ Cloudlog Helper plugin SDK for C#, aligned with `clh-proto` `v20260312`.
 ## Project Layout
 
 - `src/ClhPluginSdk`: SDK library
-- `examples/BasicDemo`: minimal console example
+- `examples/AvaloniaCapabilityDemo`: Avalonia full capability demo
 
 ## Features
 
@@ -40,17 +40,25 @@ var info = await client.QueryServerInfoAsync();
 await client.CloseAsync();
 ```
 
-## Run Demo
+## Run Avalonia Capability Demo
 
 ```bash
-dotnet run --project clh-plugin-csharp-sdk/examples/BasicDemo
+dotnet run --project clh-plugin-csharp-sdk/examples/AvaloniaCapabilityDemo
 ```
 
 Optional pipe path argument:
 
 ```bash
-dotnet run --project clh-plugin-csharp-sdk/examples/BasicDemo -- "/tmp/clh.plugin"
+dotnet run --project clh-plugin-csharp-sdk/examples/AvaloniaCapabilityDemo -- --pipe "/tmp/clh.plugin"
 ```
+
+The Avalonia demo includes:
+
+- All typed queries and commands
+- Event subscription management
+- Inbound handling by `ClientOptions.OnMessage`, `MessageReceived`, and `WaitMessageAsync`
+- `RawQueryAsync` / `RawCommandAsync`
+- Full JSON log output for request/response and inbound messages
 
 ## Command Notes
 
