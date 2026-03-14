@@ -2,6 +2,14 @@
 
 Cloudlog Helper plugin SDK for C#, aligned with `clh-proto` `v20260312`.
 
+## Install
+
+`dotnet add package ClhPluginSdk --version 0.3.2`
+
+or add to csproj:
+
+`<PackageReference Include="ClhPluginSdk" Version="0.3.2" />`
+
 ## Project Layout
 
 - `src/ClhPluginSdk`: SDK library
